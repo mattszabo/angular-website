@@ -1,3 +1,5 @@
+# These are the steps I needed to take in order to get this project working
+
 #1. in gruntfile substitue autoprefixer with postcss and install grunt-postcss to remove warnings
 npm install grunt-postcss --save-dev
 
