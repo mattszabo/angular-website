@@ -1,0 +1,12 @@
+#1. in gruntfile substitue autoprefixer with postcss and install grunt-postcss to remove warnings
+npm install grunt-postcss --save-dev
+
+#2. get karma working for tests
+npm install --global generator-angular@0.12.1 generator-karma
+
+#3a. get past imagemin error when running $ grunt
+npm cache clean && npm install gruntjs/grunt-contrib-imagemin --save-dev
+
+#3b. possibly could have downgraded
+npm install grunt-contrib-imagemin@0.9.1 --save-dev
+
