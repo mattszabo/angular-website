@@ -9,25 +9,23 @@
  */
 angular.module('mytodoApp')
   .controller('MainCtrl', function ($scope, localStorageService) {
-    var stepsInStore = localStorageService.get('steps');
+    var todoListInStore = localStorageService.get('todoList');
 
-    $scope.steps = stepsInStore || [];
-    $scope.services = [{name:"RDS"},{name:"EC2"}];
-    $scope.operations = [ {name:"Rename"},{name:"Restore"},{name:"Delete"},{name:"Modify"}];
+    $scope.todoList = todoListInStore || [];
 
-    $scope.$watch('steps', function () {
-      localStorageService.set('steps', $scope.steps);
+    $scope.$watch('todoList', function () {
+      localStorageService.set('todoList', $scope.todoList);
     }, true);
 
-    $scope.addStep = function(step) {
-      if($scope.steps.indexOf(step) === -1 && step.length > 0) {
-          $scope.steps.push(step);
+    $scope.addTodo = function(todo) {
+      if($scope.todoList.indexOf(todo) === -1 && todo.length > 0) {
+          $scope.todoList.push(todo);
       }
-      $scope.step = "";
+      $scope.todo = "";
     };
 
-    $scope.removeStep = function(index) {
-      $scope.steps.splice(index,1);
+    $scope.removeTodo = function(index) {
+      $scope.todoList.splice(index,1);
     };
 
   });

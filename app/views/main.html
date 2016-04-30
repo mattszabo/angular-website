@@ -1,20 +1,12 @@
 <div class="events">
-  <h2>Build a step</h2>
+  <h2>mytodo</h2>
 
-  <!-- Step input -->
-  <form role="form" ng-submit="addStep(service.name+':'+operation.name)">
+  <!-- Todo input -->
+  <form role="form" ng-submit="addTodo(todo)">
     <div class="row">
-      <div class="input-group">
-        <select class="form-control" ng-model="service" ng-init="service = services[0]"
-                ng-options="service.name for service in services">
-        </select>
-        <select class="form-control" ng-model="operation" ng-init="operation = operations[0]"
-                ng-options="operation.name for operation in operations">
-        </select>
-      <div class="input-group">
-        <input  type="text" value="{{service.name}}:{{operation.name}}" placeholder="What needs to be done?" class="form-control"
-                style="cursor:default; background-color:white;" disabled="true">
 
+      <div class="input-group">
+        <input  type="text" ng-model="todo" placeholder="What needs to be done?" class="form-control">
         <span class="input-group-btn ">
           <input type="submit" class="btn btn-primary" value="Add">
         </span>
@@ -24,16 +16,14 @@
 
   <br>
 
-  <h2>Steps</h2>
-
-  <!-- Steps list -->
-  <div ui-sortable ng-model="steps">
-    <p class="input-group" ng-repeat="step in steps" style="cursor:move;">
+  <!-- todo list -->
+  <div ui-sortable ng-model="todoList">
+    <p class="input-group" ng-repeat="todo in todoList" style="cursor:move;">
       <span class="input-group-addon" style="background-color:SteelBlue; color:white">{{$index+1}}</span>
-      <input  type="text" disabled="true" ng-model="step" class="form-control"
+      <input  type="text" disabled="true" ng-model="todo" class="form-control"
               style="cursor:default; background-color:white;">
       <span class="input-group-btn">
-        <button class="btn btn-danger" ng-click="removeStep($index)" aria-label="Remove">+</button>
+        <button class="btn btn-danger" ng-click="removeTodo($index)" aria-label="Remove">X</button>
       </span>
     </p>
   </div>
