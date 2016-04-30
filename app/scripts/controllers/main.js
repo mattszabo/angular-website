@@ -9,9 +9,10 @@
  */
 angular.module('mytodoApp')
   .controller('MainCtrl', function ($scope, localStorageService) {
-    var todoListInStore = localStorageService.get('todoList');
 
+    var todoListInStore = localStorageService.get('todoList');
     $scope.todoList = todoListInStore || [];
+    $scope.isEditDisabled = true;
 
     $scope.$watch('todoList', function () {
       localStorageService.set('todoList', $scope.todoList);
