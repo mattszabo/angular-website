@@ -3,11 +3,11 @@
   <h2>mytodo</h2>
 
   <!-- Todo input -->
-  <form role="form" ng-submit="addTodo(newTodoText)">
+  <form role="form" ng-submit="addTodo(todo)">
     <div class="row">
 
       <div class="input-group">
-        <input  type="text" ng-model="newTodoText" placeholder="What needs to be done?" class="form-control">
+        <input  type="text" ng-model="todo" placeholder="What needs to be done?" class="form-control">
         <span class="input-group-btn ">
           <input type="submit" class="btn btn-primary" value="Add">
         </span>
@@ -22,10 +22,10 @@
     <p class="input-group" ng-repeat="todo in todoList" style="cursor:move;">
       <span class="input-group-addon" style="background-color:SteelBlue; color:white">{{$index+1}}</span>
       <span class="input-group-btn">
-        <button class="btn" ng-class="todo.isEditable ? 'btn-info' : 'btn-success'"
-                ng-click="editTodo($index, todo.text)" aria-label="Edit">E</button>
+        <button class="btn" ng-class="isEditDisabled ? 'btn-success' : 'btn-info'"
+                ng-click="isEditDisabled = !isEditDisabled" aria-label="Edit">E</button>
       </span>
-      <input  type="text" ng-disabled="!todo.isEditable" value="{{todo.todoText}}" class="form-control"
+      <input  type="text" ng-disabled="isEditDisabled" ng-model="todo" class="form-control"
               style="cursor:default; background-color:white;">
       <span class="input-group-btn">
         <button class="btn btn-danger" ng-click="removeTodo($index)" aria-label="Remove">X</button>
