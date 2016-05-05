@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name mytodoApp.controller:AboutCtrl
+ * @name resumeApp.controller:AboutCtrl
  * @description
  * # AboutCtrl
- * Controller of the mytodoApp
+ * Controller of the resumeApp
  */
-angular.module('mytodoApp')
+angular.module('resumeApp')
   .controller('AboutCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
