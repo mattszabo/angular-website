@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name resumeApp
+ * @name mytodoApp
  * @description
- * # resumeApp
+ * # mytodoApp
  *
  * Main module of the application.
  */
 angular
-  .module('resumeApp', [
+  .module('mytodoApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
@@ -33,11 +33,6 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
         controllerAs: 'about'
-      })
-      .when('/mytodo', {
-        templateUrl: 'views/mytodo.html',
-        controller: 'MyTodoCtrl',
-        controllerAS: 'mytodo'
       })
       .otherwise({
         redirectTo: '/'
