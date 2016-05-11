@@ -81,3 +81,25 @@ body {
     border-bottom: 0;
   }
 }
+.input-group {
+  padding-bottom: 10px;
+}
+.todo-list .btn-todo {
+  border-radius: 0px;
+}
+.todo-list .input-group-addon {
+  border: 0px;
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  background-color: #337ab7;
+  color: white;
+}
+.todo-list .glyphicon {
+
+}
+.todo-list input[type="text"] {
+  cursor: default;
+  background-color: white;
+}
