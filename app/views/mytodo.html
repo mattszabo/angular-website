@@ -5,46 +5,40 @@
   </header>
 
   <main>
-    <div class="todo-list">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="events">
-            <!-- Todo input -->
-            <form role="form" ng-submit="myTodoApp.addTodo(todoTextBoxValue)">
-              <div class="row">
-                <div class="input-group">
-                  <input  type="text" ng-model="todoTextBoxValue" placeholder="What needs to be done?" class="form-control">
-                  <span class="input-group-btn ">
-                    <input type="submit" class="btn btn-primary" value="Add">
-                  </span>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
+    <div class="row todo-list">
+      <div class="col-md-6">
+        <!-- Todo input -->
+        <form role="form" ng-submit="myTodoApp.addTodo(todoTextBoxValue)">
+            <div class="input-group">
+              <input  type="text" ng-model="todoTextBoxValue" placeholder="What needs to be done?" class="form-control">
+              <span class="input-group-btn ">
+                <input type="submit" class="btn btn-primary" value="Add">
+              </span>
+            </div>
+        </form>
+      </div>
 
-        <div class="col-md-6">
-          <!-- todo list -->
-          <div ui-sortable ng-model="myTodoApp.todoList">
-            <p class="input-group" ng-repeat="todo in myTodoApp.todoList">
-              <span class="input-group-addon">
-                {{$index+1}}
-              </span>
-              <span class="input-group-btn">
-                <button
-                  class="btn btn-todo" ng-class="todo.isEditable ? 'btn-info' : 'btn-success'"
-                  ng-click="myTodoApp.editTodo($index, todo.text)" aria-label="Edit">
-                  <i class="glyphicon glyphicon-edit"></i>
-                </button>
-              </span>
-              <input type="text" ng-disabled="!todo.isEditable" value="{{todo.todoText}}" class="form-control">
-              <span class="input-group-btn">
-                <button class="btn btn-danger" ng-click="myTodoApp.removeTodo($index)" aria-label="Remove">
-                  X
-                </button>
-              </span>
-            </p>
-          </div>
+      <div class="col-md-6">
+        <!-- todo list -->
+        <div ui-sortable ng-model="myTodoApp.todoList">
+          <p class="input-group" ng-repeat="todo in myTodoApp.todoList">
+            <span class="input-group-addon">
+              {{$index+1}}
+            </span>
+            <span class="input-group-btn">
+              <button
+                class="btn btn-todo" ng-class="todo.isEditable ? 'btn-info' : 'btn-success'"
+                ng-click="myTodoApp.editTodo($index, todo.text)" aria-label="Edit">
+                <i class="glyphicon glyphicon-edit"></i>
+              </button>
+            </span>
+            <input type="text" ng-disabled="!todo.isEditable" value="{{todo.todoText}}" class="form-control">
+            <span class="input-group-btn">
+              <button class="btn btn-danger" ng-click="myTodoApp.removeTodo($index)" aria-label="Remove">
+                X
+              </button>
+            </span>
+          </p>
         </div>
       </div>
     </div>
