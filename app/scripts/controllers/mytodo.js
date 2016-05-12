@@ -1,7 +1,4 @@
 /*jslint white: true, devel: true */
-/*global angular */
-var myApp = angular.module('resumeApp'); //need to learn why this line breaks the controller if i add a '[]' parameter;
-
 /**
  * @ngdoc function
  * @name resumeApp.controller:MyTodoCtrl
@@ -9,7 +6,11 @@ var myApp = angular.module('resumeApp'); //need to learn why this line breaks th
  * # MyTodoCtrl
  * Controller of the resumeApp
  */
-myApp.controller('MyTodoCtrl', function($scope, localStorageService) {
+
+/*global angular */
+var resumeApp = angular.module('resumeApp'); //need to learn why this line breaks the controller if i add a '[]' parameter;
+
+resumeApp.controller('MyTodoCtrl', function($scope, localStorageService) {
     'use strict';
 
     $scope.myTodoApp = {

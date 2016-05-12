@@ -9,12 +9,12 @@
       <div class="col-md-6">
         <!-- Todo input -->
         <form role="form" ng-submit="myTodoApp.addTodo(todoTextBoxValue)">
-            <div class="input-group">
-              <input  type="text" ng-model="todoTextBoxValue" placeholder="What needs to be done?" class="form-control">
-              <span class="input-group-btn ">
-                <input type="submit" class="btn btn-primary" value="Add">
-              </span>
-            </div>
+          <div class="input-group add-todo">
+            <input  type="text" ng-model="todoTextBoxValue" placeholder="What needs to be done?" class="form-control">
+            <span class="input-group-btn ">
+              <input type="submit" class="btn btn-primary" value="Add">
+            </span>
+          </div>
         </form>
       </div>
 
@@ -27,7 +27,7 @@
             </span>
             <span class="input-group-btn">
               <button
-                class="btn btn-todo" ng-class="todo.isEditable ? 'btn-info' : 'btn-success'"
+                class="btn btn-todo-edit" ng-class="todo.isEditable ? 'btn-info' : 'btn-success'"
                 ng-click="myTodoApp.editTodo($index, todo.text)" aria-label="Edit">
                 <i class="glyphicon glyphicon-edit"></i>
               </button>
