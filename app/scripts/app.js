@@ -18,7 +18,8 @@ var resumeApp = angular
   'ngSanitize',
   'ngTouch',
   'ui.sortable',
-  'LocalStorageModule'
+  'LocalStorageModule',
+  'ngDraggable'
 ]);
 resumeApp.config(['localStorageServiceProvider', function(localStorageServiceProvider){
   'use strict';
