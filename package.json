@@ -42,7 +42,8 @@
   "scripts": {
     "test": "karma start test/karma.conf.js"
   },
-  "scripts": {
-    "start": "node scripts/app.js"
+  "dependencies": {
+    "express": "^4.13.4",
+    "gzippo": "^0.2.0"
   }
 }
