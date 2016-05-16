@@ -40,7 +40,10 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "karma start test/karma.conf.js",
-    "start": "node scripts/app.js"
+    "test": "karma start test/karma.conf.js"
+  },
+  "dependencies": {
+    "express": "^4.13.4",
+    "gzippo": "^0.2.0"
   }
 }
