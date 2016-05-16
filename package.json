@@ -43,6 +43,6 @@
     "test": "karma start test/karma.conf.js"
   },
   "scripts": {
-    "start": "node /app/scripts/app.js"
+    "start": "node scripts/app.js"
   }
 }
