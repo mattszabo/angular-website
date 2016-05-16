@@ -14,7 +14,8 @@
     "jquery-ui": "^1.11.4",
     "angular-local-storage": "^0.2.7",
     "ngDraggable": "^0.1.8",
-    "angular-mocks": "^1.3.0"
+    "angular-mocks": "^1.3.0",
+    "jquery-ui-touch-punch": "*"
   },
   "appPath": "app",
   "moduleName": "resumeApp",
