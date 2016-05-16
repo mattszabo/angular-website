@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <header class="header">
-    <h1>mytodo</h1>
+    <h1>mytodo - draggable</h1>
   </header>
 
   <main>
@@ -22,7 +22,7 @@
         <!-- todo list -->
         <div ui-sortable ng-model="myTodoApp.todoList">
           <p class="input-group" ng-repeat="todo in myTodoApp.todoList">
-            <span class="input-group-addon">
+            <span ng-draggable class="input-group-addon">
               {{$index+1}}
             </span>
             <span class="input-group-btn">
