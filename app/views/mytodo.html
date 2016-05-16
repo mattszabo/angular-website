@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <header class="header">
-    <h1>mytodo - draggable</h1>
+    <h1>mytodo</h1>
   </header>
 
   <main>
@@ -22,9 +22,10 @@
         <!-- todo list -->
         <div ui-sortable ng-model="myTodoApp.todoList">
           <p class="input-group" ng-repeat="todo in myTodoApp.todoList">
-            <span ng-draggable class="input-group-addon">
+            <span ng-draggable class="input-group-addon" id="draggable-index-number">
               {{$index+1}}
             </span>
+            <script>$('#draggable-index-number').draggable();</script>
             <span class="input-group-btn">
               <button
                 class="btn btn-todo-edit" ng-class="todo.isEditable ? 'btn-info' : 'btn-success'"
