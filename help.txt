@@ -18,3 +18,4 @@ npm install grunt-contrib-imagemin@0.9.1 --save-dev
 #prune remote branches (i.e. .git/refs/remote/origin/* - except master)
 git remote prune origin 
 
+
