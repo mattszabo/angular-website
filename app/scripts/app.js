@@ -1,16 +1,16 @@
 /*jslint white: true, devel: true */
 /**
 * @ngdoc overview
-* @name resumeApp
+* @name angularApp
 * @description
-* # resumeApp
+* # angularApp
 *
 * Main module of the application.
 */
 
 /*global angular */
-var resumeApp = angular
-.module('resumeApp', [
+var angularApp = angular
+.module('angularApp', [
   'ngAnimate',
   'ngCookies',
   'ngResource',
@@ -21,7 +21,7 @@ var resumeApp = angular
   'LocalStorageModule',
   'ngDraggable'
 ]);
-resumeApp.config(['localStorageServiceProvider', function(localStorageServiceProvider){
+angularApp.config(['localStorageServiceProvider', function(localStorageServiceProvider){
   'use strict';
   localStorageServiceProvider.setPrefix('ls');
 }])

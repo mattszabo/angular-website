@@ -18,7 +18,7 @@
     "jquery-ui-touch-punch": "*"
   },
   "appPath": "app",
-  "moduleName": "resumeApp",
+  "moduleName": "angularApp",
   "overrides": {
     "bootstrap": {
       "main": [

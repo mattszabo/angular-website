@@ -10,9 +10,4 @@ My first look into web development. I jumped straight in using yeoman and began 
 
 ## Build & development
 
-Run `grunt` for building and `grunt serve` for preview.
-
-## Testing
-
-Running `grunt test` will run the unit tests with karma.
-
+Run `grunt build` for prod build and `grunt serve` for dev.

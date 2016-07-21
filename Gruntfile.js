@@ -30,7 +30,7 @@ module.exports = function (grunt) {
   grunt.initConfig({
 
     // Project settings
-    resume: appConfig,
+    angularApp: appConfig,
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
@@ -39,7 +39,7 @@ module.exports = function (grunt) {
         tasks: ['wiredep']
       },
       js: {
-        files: ['<%= resume.app %>/scripts/{,*/}*.js'],
+        files: ['<%= angularApp.app %>/scripts/{,*/}*.js'],
         tasks: ['newer:jshint:all'],
         options: {
           livereload: '<%= connect.options.livereload %>'
@@ -50,7 +50,7 @@ module.exports = function (grunt) {
         tasks: ['newer:jshint:test', 'karma']
       },
       styles: {
-        files: ['<%= resume.app %>/styles/{,*/}*.css'],
+        files: ['<%= angularApp.app %>/styles/{,*/}*.css'],
         tasks: ['newer:copy:styles', 'postcss']
       },
       gruntfile: {
@@ -61,9 +61,9 @@ module.exports = function (grunt) {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
-          '<%= resume.app %>/{,*/}*.html',
+          '<%= angularApp.app %>/{,*/}*.html',
           '.tmp/styles/{,*/}*.css',
-          '<%= resume.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+          '<%= angularApp.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       }
     },
@@ -114,7 +114,7 @@ module.exports = function (grunt) {
       dist: {
         options: {
           open: true,
-          base: '<%= resume.dist %>'
+          base: '<%= angularApp.dist %>'
         }
       }
     },
@@ -128,7 +128,7 @@ module.exports = function (grunt) {
       all: {
         src: [
           'Gruntfile.js',
-          '<%= resume.app %>/scripts/{,*/}*.js'
+          '<%= angularApp.app %>/scripts/{,*/}*.js'
         ]
       },
       test: {
@@ -146,8 +146,8 @@ module.exports = function (grunt) {
           dot: true,
           src: [
             '.tmp',
-            '<%= resume.dist %>/{,*/}*',
-            '!<%= resume.dist %>/.git{,*/}*'
+            '<%= angularApp.dist %>/{,*/}*',
+            '!<%= angularApp.dist %>/.git{,*/}*'
           ]
         }]
       },
@@ -183,7 +183,7 @@ module.exports = function (grunt) {
     // Automatically inject Bower components into the app
     wiredep: {
       app: {
-        src: ['<%= resume.app %>/index.html'],
+        src: ['<%= angularApp.app %>/index.html'],
         ignorePath:  /\.\.\//
       },
       test: {
@@ -208,10 +208,10 @@ module.exports = function (grunt) {
     filerev: {
       dist: {
         src: [
-          '<%= resume.dist %>/scripts/{,*/}*.js',
-          '<%= resume.dist %>/styles/{,*/}*.css',
-          '<%= resume.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-          '<%= resume.dist %>/styles/fonts/*'
+          '<%= angularApp.dist %>/scripts/{,*/}*.js',
+          '<%= angularApp.dist %>/styles/{,*/}*.css',
+          '<%= angularApp.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+          '<%= angularApp.dist %>/styles/fonts/*'
         ]
       }
     },
@@ -220,9 +220,9 @@ module.exports = function (grunt) {
     // concat, minify and revision files. Creates configurations in memory so
     // additional tasks can operate on them
     useminPrepare: {
-      html: '<%= resume.app %>/index.html',
+      html: '<%= angularApp.app %>/index.html',
       options: {
-        dest: '<%= resume.dist %>',
+        dest: '<%= angularApp.dist %>',
         flow: {
           html: {
             steps: {
@@ -237,14 +237,14 @@ module.exports = function (grunt) {
 
     // Performs rewrites based on filerev and the useminPrepare configuration
     usemin: {
-      html: ['<%= resume.dist %>/{,*/}*.html'],
-      css: ['<%= resume.dist %>/styles/{,*/}*.css'],
-      js: ['<%= resume.dist %>/scripts/{,*/}*.js'],
+      html: ['<%= angularApp.dist %>/{,*/}*.html'],
+      css: ['<%= angularApp.dist %>/styles/{,*/}*.css'],
+      js: ['<%= angularApp.dist %>/scripts/{,*/}*.js'],
       options: {
         assetsDirs: [
-          '<%= resume.dist %>',
-          '<%= resume.dist %>/images',
-          '<%= resume.dist %>/styles'
+          '<%= angularApp.dist %>',
+          '<%= angularApp.dist %>/images',
+          '<%= angularApp.dist %>/styles'
         ],
         patterns: {
           js: [[/(images\/[^''""]*\.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']]
@@ -259,7 +259,7 @@ module.exports = function (grunt) {
     // cssmin: {
     //   dist: {
     //     files: {
-    //       '<%= resume.dist %>/styles/main.css': [
+    //       '<%= angularApp.dist %>/styles/main.css': [
     //         '.tmp/styles/{,*/}*.css'
     //       ]
     //     }
@@ -268,8 +268,8 @@ module.exports = function (grunt) {
     // uglify: {
     //   dist: {
     //     files: {
-    //       '<%= resume.dist %>/scripts/scripts.js': [
-    //         '<%= resume.dist %>/scripts/scripts.js'
+    //       '<%= angularApp.dist %>/scripts/scripts.js': [
+    //         '<%= angularApp.dist %>/scripts/scripts.js'
     //       ]
     //     }
     //   }
@@ -282,9 +282,9 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '<%= resume.app %>/images',
+          cwd: '<%= angularApp.app %>/images',
           src: '{,*/}*.{png,jpg,jpeg,gif}',
-          dest: '<%= resume.dist %>/images'
+          dest: '<%= angularApp.dist %>/images'
         }]
       }
     },
@@ -293,9 +293,9 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '<%= resume.app %>/images',
+          cwd: '<%= angularApp.app %>/images',
           src: '{,*/}*.svg',
-          dest: '<%= resume.dist %>/images'
+          dest: '<%= angularApp.dist %>/images'
         }]
       }
     },
@@ -310,9 +310,9 @@ module.exports = function (grunt) {
         },
         files: [{
           expand: true,
-          cwd: '<%= resume.dist %>',
+          cwd: '<%= angularApp.dist %>',
           src: ['*.html'],
-          dest: '<%= resume.dist %>'
+          dest: '<%= angularApp.dist %>'
         }]
       }
     },
@@ -320,11 +320,11 @@ module.exports = function (grunt) {
     ngtemplates: {
       dist: {
         options: {
-          module: 'resumeApp',
+          module: 'angularApp',
           htmlmin: '<%= htmlmin.dist.options %>',
           usemin: 'scripts/scripts.js'
         },
-        cwd: '<%= resume.app %>',
+        cwd: '<%= angularApp.app %>',
         src: 'views/{,*/}*.html',
         dest: '.tmp/templateCache.js'
       }
@@ -346,7 +346,7 @@ module.exports = function (grunt) {
     // Replace Google CDN references
     cdnify: {
       dist: {
-        html: ['<%= resume.dist %>/*.html']
+        html: ['<%= angularApp.dist %>/*.html']
       }
     },
 
@@ -356,8 +356,8 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           dot: true,
-          cwd: '<%= resume.app %>',
-          dest: '<%= resume.dist %>',
+          cwd: '<%= angularApp.app %>',
+          dest: '<%= angularApp.dist %>',
           src: [
             '*.{ico,png,txt}',
             '.htaccess',
@@ -368,18 +368,18 @@ module.exports = function (grunt) {
         }, {
           expand: true,
           cwd: '.tmp/images',
-          dest: '<%= resume.dist %>/images',
+          dest: '<%= angularApp.dist %>/images',
           src: ['generated/*']
         }, {
           expand: true,
           cwd: 'bower_components/bootstrap/dist',
           src: 'fonts/*',
-          dest: '<%= resume.dist %>'
+          dest: '<%= angularApp.dist %>'
         }]
       },
       styles: {
         expand: true,
-        cwd: '<%= resume.app %>/styles',
+        cwd: '<%= angularApp.app %>/styles',
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
       }

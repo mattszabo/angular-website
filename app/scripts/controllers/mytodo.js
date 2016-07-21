@@ -1,16 +1,16 @@
 /*jslint white: true, devel: true */
 /**
  * @ngdoc function
- * @name resumeApp.controller:MyTodoCtrl
+ * @name angularApp.controller:MyTodoCtrl
  * @description
  * # MyTodoCtrl
- * Controller of the resumeApp
+ * Controller of the angularApp
  */
 
 /*global angular */
-var resumeApp = angular.module('resumeApp'); //need to learn why this line breaks the controller if i add a '[]' parameter;
+var angularApp = angular.module('angularApp'); //need to learn why this line breaks the controller if i add a '[]' parameter;
 
-resumeApp.controller('MyTodoCtrl', function($scope, localStorageService) {
+angularApp.controller('MyTodoCtrl', function($scope, localStorageService) {
     'use strict';
 
     $scope.myTodoApp = {
