@@ -1,6 +1,6 @@
 # angular website
 
-My first look into web development. I jumped straight in using yeoman and began messing around with js, angular, and bootstrap.
+My first look into web development. I jumped straight in using yeoman and began messing around with js, angular, and bootstrap. The todo list is saved to local storage for the browser, which persists between sessions.
 
 ## Install
 ```git clone https://github.com/wekilledit/angular-website.git .```  
